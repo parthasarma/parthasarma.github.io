@@ -1,5 +1,8 @@
+//generate a random number
+var randomLoc = Math.floor(Math.random()*5);
+
 //To hold the location of each cell of the ship
-var location1 = 3, location2 = 4, location3 = 5;
+var location1 = randomLoc, location2 = location1 + 1, location3 = location2 + 1;
 
 //To hold the user guess
 var guess;
@@ -25,13 +28,13 @@ while(isSunk == false){
 		if (guess == location1 || guess == location2 || guess == location3) {
 			hits++;
 			alert("HIT!!");
+			if (hits == 3) {
+				isSunk = true;
+				alert("you sank my ship");
+			}
 		}else{
 			alert("MISS!!");
-		}
-		if (hits == 3) {
-			isSunk = true;
-			alert("you sank my ship");
-		}
+		}	
 	}
 }
 

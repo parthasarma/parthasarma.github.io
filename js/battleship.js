@@ -1,8 +1,8 @@
 //To hold the location of each cell of the ship
-var location1 = 0, location2 = 0, location3 = 0;
+var location1 = 3, location2 = 4, location3 = 5;
 
 //To hold the user guess
-var guess = 0;
+var guess;
 
 //to hold the number of hits
 var hits = 0;
@@ -12,3 +12,29 @@ var guesses = 0;
 
 //to hold the status of the ship (sunk or not)
 var isSunk = false;
+
+while(isSunk == false){
+	//ask the user to enter a guess
+	guess = prompt("Ready, aim, fire! (enter a number 0-6):");
+
+	//compare the guess with location
+	if (isNaN(guess) || guess < 0 || guess > 6) {
+		alert("Please enter a valid cell number");
+	}else{
+		guesses++;
+		if (guess == location1 || guess == location2 || guess == location3) {
+			hits++;
+			alert("HIT!!");
+		}else{
+			alert("MISS!!");
+		}
+		if (hits == 3) {
+			isSunk = true;
+			alert("you sank my ship");
+		}
+	}
+}
+
+var status = "You took " + guesses + " to sunk the ship which means your shooting accuracy is: " + ((3/guesses)*100) + "%.";
+
+alert(status); 

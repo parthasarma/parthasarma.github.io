@@ -1,4 +1,4 @@
 parthasarma.github.io
 =====================
 
-Battleship Game
+The aim is learn and master JavaScript and build the Battleship Game.

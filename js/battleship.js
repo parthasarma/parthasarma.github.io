@@ -70,7 +70,11 @@ var controller = {
 	guesses: 0,
 
 	processGuess: function (guess) {
-		// body...
+		var location = parseGuess(guess);
+
+		if (location) {
+			
+		}
 	},
 
 	parseGuess: function (guess) {

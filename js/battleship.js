@@ -22,7 +22,7 @@ var model ={
 	boardSize: 7,
 	numShips: 3,
 	shipLength: 3,
-	shipSunk: 0,
+	shipsSunk: 0,
 
 	ships: [{locations: ["06", "16", "26"], hits: ["", "", ""]},
 			{locations: ["24", "34", "44"], hits: ["", "", ""]},
@@ -43,8 +43,8 @@ var model ={
 				view.displayMessage("HIT!!");
 
 				if (this.isSunk(ship)) {
-					view.displayMessage("You sank the ship");
-					this.shipLength++;
+					view.displayMessage("You sank my battleship");
+					this.shipsSunk++;
 				}
 
 				return true;
@@ -58,7 +58,7 @@ var model ={
 
 	isSunk: function (ship) {
 		for (var i = 0; i < this.shipLength; i++) {
-			if (ship.hits[i] !== "miss") {
+			if (ship.hits[i] !== "hit") {
 				return false;
 			}
 		}
@@ -75,13 +75,13 @@ var controller = {
 		if (location) {
 			this.guesses++;
 			var hit = model.fire(location);
-			if (hit && model.shipSunk === model.numShips) {
+			if (hit && model.shipsSunk === model.numShips) {
 				view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses.");
 			}
 		}
 	}
 
-}
+};
 
 
 function parseGuess (guess) {
@@ -90,7 +90,7 @@ function parseGuess (guess) {
 	if (guess === null || guess.length !== 2) {
 		alert("Oops, please enter a letter and a number on the board.");
 	}else{
-		var firstChar = guess.charAt(0);
+		var firstChar = guess.charAt(0).toUpperCase();
 
 		var row = alphabet.indexOf(firstChar);
 		var column = guess.charAt(1);
@@ -106,3 +106,29 @@ function parseGuess (guess) {
 
 	return null;
 }
+
+function init () {
+	var fireButton = document.getElementById("fireButton");
+	fireButton.onclick = handleFireButton;
+
+	var guessInput = document.getElementById("guessInput");
+	guessInput.onkeypress = handleKeyPress;
+}
+
+function handleFireButton () {
+	var guessInput = document.getElementById("guessInput");
+	var guess = guessInput.value;
+	controller.processGuess(guess);
+
+	guessInput.value = "";
+}
+
+function handleKeyPress (e) {
+	var fireButton = document.getElementById("fireButton");
+	if (e.keyCode === 13) {
+		fireButton.click();
+		return false;
+	}
+}
+
+window.onload = init;

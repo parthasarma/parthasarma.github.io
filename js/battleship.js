@@ -172,6 +172,8 @@ function init () {
 	guessInput.onkeypress = handleKeyPress;
 
 	model.generateShipLocations();
+
+	document.getElementById("guessInput").focus();
 }
 
 function handleFireButton () {

@@ -1,6 +1,6 @@
 #!/bin/bash
 #automating git update
-#git add .
+git add .
 git commit -m --date
-#git push origin master
+git push origin master
 #git status

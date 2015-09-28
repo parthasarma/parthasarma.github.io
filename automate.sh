@@ -1,6 +1,6 @@
 #!/bin/bash
 #automating git update
 git add .
-git commit -m "committing new edits"
+git commit "commit-msg"
 git push origin master
 #git status

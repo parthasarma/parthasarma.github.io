@@ -24,17 +24,52 @@
 <body>
 	<script type="text/javascript">
 		var utag_data = {
+		  page_name : "", // Contains a user-friendly page name.
+		  page_section_name : "", // Contains a user-friendly section, e.g. 'product section'.
+		  page_category_name : "", // Contains a user-friendly category name, e.g. 'appliances'.
+		  page_subcategory_name : "", // Contains a user-friendly subcategory name, e.g. 'dishwashers'.
+		  page_type : "", // Contains a user-friendly page type, e.g. 'cart page'.
+		  product_id : "", // Contains product ID(s) - multiple values should be comma-separated.
+		  product_sku : "", // Contains product SKU(s) - multiple values should be comma-separated.
+		  product_name : "", // Contains product name(s) - multiple values should be comma-separated.
+		  product_brand : "", // Contains product brand(s) - multiple values should be comma-separated.
+		  product_category : "", // Contains product category(s) - multiple values should be comma-separated.
+		  product_unit_price : "", // Contains product unit price(s) - multiple values should be comma-separated.
+		  product_quantity : "", // Contains product quantity(s) - multiple values should be comma-separated.
+		  product_list_price : "", // Contains product list price(s) before discount - multiple values should be comma-separated.
+		  order_id : "", // Contains the order or transaction ID.
+		  order_subtotal : "", // Contains the order payment type.
+		  order_payment_type : "", // Contains the order payment type.
+		  order_total : "", // Contains the order total value.
+		  order_discount : "", // Contains the order discount (if any).
+		  order_shipping : "", // Contains the order shipping value.
+		  order_tax : "", // Contains the order tax amount.
+		  order_currency : "", // Contains the currency associated with the transaction, e.g. 'USD'.
+		  customer_id : "", // Contains the customer ID.
+		  customer_email : "", // Contains the customer email.
+		  customer_type : "", // Contains the customer type.
+		  search_results : "", // Contains the number of results returned with a search query.
+		  search_keyword : "", // Contains the search query conducted by user.
+		  site_region : "", // Includes values for region or localized version, e.g. 'en_US'.
+		  site_currency : "", // Contains the currency shown on site, e.g. 'USD'.
+		  iq_event_id : "", // A system variable that contains the ID of an iQ event and used to fire a tag when an event happens.
+		  tealium_event : "", // Contains the Tealium event.
+		  scroll_depth : "", // 
+		  scroll_depth_type : "", // 
+		  scroll_direction : "" // 
 		}
 		</script>
 		
 		<!-- Loading script asynchronously -->
 		<script type="text/javascript">
 			(function(a,b,c,d){
-			a='https://tags.tiqcdn.com/utag/akqa-sandbox/main/prod/utag.js';
+			a='https://tags.tiqcdn.com/utag/edu-q4-2023/q423-252/prod/utag.js';
 			b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
 			a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
 			})();
 		</script>
+		
+			
 		
 			
 	<!-- Google Tag Manager (noscript) 
